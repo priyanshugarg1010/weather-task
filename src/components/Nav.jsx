@@ -1,3 +1,6 @@
+import Lottie from "lottie-react";
+import weather from "../../public/weather.json";
+
 const Nav = () => {
   return (
     <div>
@@ -6,6 +9,15 @@ const Nav = () => {
           <h1 className="orange_gradient py-2 lg:text-4xl md:text-4xl text-3xl  font-extrabold font-serif ">
             Weather_Finder
           </h1>
+          <div className="lg:block md:block hidden">
+            <Lottie
+              animationData={weather}
+              style={{ height: "100px" }}
+              loop={true}
+              height={20}
+              width={20}
+            />
+          </div>
         </div>
       </nav>
     </div>

@@ -5,6 +5,8 @@ import WeatherTable from "./components/WeatherTable";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Nav from "./components/Nav";
+import Lottie from "lottie-react";
+import github from "../public/github.json";
 
 const App = () => {
   let [city, setCity] = useState("");
@@ -71,7 +73,7 @@ const App = () => {
             theme="light"
             transition:Bounce
           />{" "}
-          <div className="flex  flex-col justify-center items-center gap-10">
+          <div className="flex  flex-col justify-center items-center gap-5">
             <div className="">
               <form onSubmit={handleSubmit}>
                 <input
@@ -100,11 +102,25 @@ const App = () => {
                 </>
               )}
             </div>
-            <div className="lg:w-[1200px] w-96 py-5 md:w-[700px]  overflow-x-auto">
+            <div className="lg:w-[1200px] w-96 py-5 md:w-[700px] overflow-x-auto">
               {forecastData && (
                 <WeatherTable forecastData={forecastData} convert={convert} />
               )}
             </div>
+          </div>
+          <div className="fixed bottom-0 right-0">
+            <a
+              href="https://github.com/priyanshugarg1010/weather-task"
+              target="blank"
+            >
+              <Lottie
+                animationData={github}
+                style={{ height: "100px" }}
+                loop={true}
+                height={10}
+                width={10}
+              />
+            </a>
           </div>
         </main>
       </div>
